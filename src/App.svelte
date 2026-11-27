@@ -164,8 +164,8 @@
     error = '';
     try {
       const [v, k] = await Promise.all([
-        fetch('/2026-11-20_Asker.csv').then((r) => { if (!r.ok) throw new Error('Fant ikke VinkSite-testfil'); return r.text(); }),
-        fetch('/Karoo-Evening_Ride-2026-11-20-1915.fit').then((r) => { if (!r.ok) throw new Error('Fant ikke Karoo-testfil'); return r.arrayBuffer(); }),
+        fetch('demo/2026-11-20_Asker.csv').then((r) => { if (!r.ok) throw new Error('Fant ikke VinkSite-testfil'); return r.text(); }),
+        fetch('demo/2026-11-20_Karoo.fit').then((r) => { if (!r.ok) throw new Error('Fant ikke Karoo-testfil'); return r.arrayBuffer(); }),
       ]);
       await loadTimingFile(v, '2026-11-20_Asker.csv');
       chainring = 60; cog = 15; circMm = 2105;
@@ -239,7 +239,7 @@
     <div class="files">
       <label class="file">Tidtaking (VinkSite CSV/FIT)<input type="file" accept=".csv,.fit" onchange={onTiming} /></label>
       <label class="file">Karoo (FIT)<input type="file" accept=".fit" onchange={onRide} /></label>
-      {#if import.meta.env.DEV}<button onclick={loadTestData}>Last testdata 20.11</button>{/if}
+      <button onclick={loadTestData}>Prøv med eksempeldata (20.11)</button>
     </div>
     <div class="status">
       {#if timing}<span>{timing.name}: {timing.blocks.length} bolker, {timing.blocks.reduce((a, b) => a + b.lapTimes.length, 0)} runder</span>{/if}
@@ -403,7 +403,7 @@
     {/if}
     <p class="hint">Mellomrom spiller av og pauser. Piltastene flytter 0,5 s, med Shift 5 s. Dra i grafene for å flytte.</p>
   {:else}
-    <p class="empty">Last inn tidtaking fra VinkSite (CSV eller FIT), og eventuelt Karoo-FIT. {import.meta.env.DEV ? 'Eller trykk «Last testdata».' : 'Filene leses bare på denne enheten og sendes ikke noe sted.'}</p>
+    <p class="empty">Last inn tidtaking fra VinkSite (CSV eller FIT), og eventuelt Karoo-FIT. Eller trykk «Prøv med eksempeldata». Dine egne filer leses bare på denne enheten og sendes ikke noe sted.</p>
   {/if}
 </div>
 

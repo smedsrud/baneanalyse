@@ -30,7 +30,7 @@ export default defineConfig({
       },
       workbox: {
         // Alt appen trenger caches, så den virker uten nett på banen
-        globPatterns: ['**/*.{js,css,html,png,svg,webmanifest}'],
+        globPatterns: ['**/*.{js,css,html,png,svg,webmanifest}', 'demo/*.{csv,fit}'],
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
       },
     }),

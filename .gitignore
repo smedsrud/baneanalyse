@@ -32,3 +32,7 @@ dist-ssr
 
 # Personlige prosjektnotater (navn, transponder-ID, treningsfunn)
 CONTEXT.md
+
+# Unntak: eksempeldata som publiseres med appen (20.11.2026). Fjern mappa for å ta dem ned.
+!public/demo/*.csv
+!public/demo/*.fit
