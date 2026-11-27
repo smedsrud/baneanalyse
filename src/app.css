@@ -1,0 +1,79 @@
+:root {
+  color-scheme: light;
+  --surface-1: #ffffff;
+  --surface-2: #f5f5f4;
+  --text-primary: #191919;
+  --text-secondary: #666666;
+  --grid: #ececec;
+  --grid-strong: #d0d0d0;
+  --highlight: #e3efff;
+  --series-1: #257de0;
+  --series-2: #f47230;
+  --series-3: #00b894;
+  --series-7: #6a4ce2;
+  --series-8: #ec4647;
+  --status-critical: #c62828;
+  --status-good: #1b7f3a;
+  --status-warn: #b26a00;
+  --band-interval: rgba(37, 125, 224, 0.08);
+  --band-f200: rgba(244, 114, 48, 0.13);
+  --band-sprint: rgba(106, 76, 226, 0.14);
+
+  --track-surface: #d9c7a5;
+  --track-azur: #7fb3e6;
+  --track-line: #111111;
+  --track-blue: #1d5fd1;
+  --track-red: #d22b2b;
+  --track-white: #ffffff;
+  --track-safety: #c9ced4;
+
+  font-family: system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text-primary);
+  background: var(--surface-1);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --surface-1: #191919;
+    --surface-2: #222222;
+    --text-primary: #efefef;
+    --text-secondary: #9c9c9c;
+    --grid: #2c2c2c;
+    --grid-strong: #444444;
+    --highlight: #1c3352;
+    --series-1: #338ced;
+    --series-2: #e76624;
+    --series-3: #00a888;
+    --series-7: #9887ef;
+    --series-8: #eb6263;
+    --status-critical: #ef5350;
+    --status-good: #4caf6a;
+    --status-warn: #e0a030;
+    --band-interval: rgba(51, 140, 237, 0.12);
+    --band-f200: rgba(231, 102, 36, 0.18);
+    --band-sprint: rgba(152, 135, 239, 0.18);
+    --track-surface: #5a4c36;
+    --track-azur: #2f5b86;
+    --track-line: #0a0a0a;
+    --track-blue: #5b95f5;
+    --track-safety: #3a3f45;
+  }
+}
+
+body { margin: 0; background: var(--surface-1); }
+
+button, select, input[type='number'] {
+  font: inherit;
+  font-size: 13px;
+  color: var(--text-primary);
+  background: var(--surface-1);
+  border: 1px solid var(--grid-strong);
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+button:hover { background: var(--surface-2); }
